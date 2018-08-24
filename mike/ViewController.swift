@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import AudioToolbox
+
+var queue: AudioQueueRef!
+var timer: Timer!
+
+var dataFormat = AudioStreamBasicDescription(
+    mSampleRate: 44100.0,
+    mFormatID: kAudioFormatLinearPCM,
+    mFormatFlags: AudioFormatFlags(kLinearPCMFormatFlagIsBigEndian |
+        kLinearPCMFormatFlagIsSignedInteger |
+        kLinearPCMFormatFlagIsPacked),
+    mBytesPerPacket: 2,
+    mFramesPerPacket: 1,
+    mBytesPerFrame: 2,
+    mChannelsPerFrame: 1,
+    mBitsPerChannel: 16,
+    mReserved: 0)
 
 class ViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
 
 
